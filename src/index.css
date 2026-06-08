@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Noto+Serif+SC:wght@400;500;600;700;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: 'Noto Sans SC', 'Source Han Sans SC', system-ui, sans-serif;
+  line-height: 1.75;
+  font-weight: 400;
+  color: #333333;
+  background-color: #F7F5F0;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background-color: #F7F5F0;
+}
+
+/* 滚动条 */
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: #eee;
+}
+::-webkit-scrollbar-thumb {
+  background: #6B1515;
+  border-radius: 3px;
+}
+
+::selection {
+  background-color: #6B1515;
+  color: #fff;
+}
+
+/* ========== 陕历博风格全局类 ========== */
+
+/* 正文段落 */
+.sxhm-text {
+  @apply text-[#555] leading-[1.9] tracking-wide text-sm md:text-[15px];
+  font-family: 'Noto Sans SC', sans-serif;
+}
+
+/* 大标题 */
+.sxhm-heading {
+  font-family: 'Noto Serif SC', serif;
+  @apply text-[#2C2C2C] font-bold tracking-wide;
+}
+
+/* 英文标签 */
+.sxhm-label {
+  @apply text-[10px] tracking-[0.25em] uppercase text-[#8B6B5A];
+  font-family: 'Noto Sans SC', sans-serif;
+}
+
+/* 红色装饰短线 */
+.sxhm-red-line {
+  width: 32px;
+  height: 2px;
+  background: #6B1515;
+  margin: 12px 0;
+}
+
+/* 红色方块装饰点 */
+.sxhm-dot {
+  width: 6px;
+  height: 6px;
+  background: #6B1515;
+  display: inline-block;
+}
+
+/* 垂直红色装饰线 */
+.sxhm-vline {
+  width: 2px;
+  height: 40px;
+  background: #6B1515;
+}
+
+/* 卡片容器 */
+.sxhm-card {
+  @apply bg-white shadow-sm;
+  transition: all 0.35s ease;
+}
+.sxhm-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+}
+
+/* 图片容器 */
+.sxhm-img-box {
+  @apply overflow-hidden relative;
+}
+.sxhm-img-box img {
+  @apply w-full h-full object-cover;
+  transition: transform 0.6s ease;
+}
+.sxhm-img-box:hover img {
+  transform: scale(1.05);
+}
+
+/* 底部分隔装饰线 */
+.sxhm-section-divider {
+  @apply flex items-center justify-center gap-2 my-3;
+}
+.sxhm-section-divider::before,
+.sxhm-section-divider::after {
+  content: '';
+  @apply h-px flex-1;
+  background: linear-gradient(to right, transparent, #6B151533, transparent);
+}
+.sxhm-section-divider .sxhm-dot {
+  width: 6px;
+  height: 6px;
+  background: #6B1515;
+  flex-shrink: 0;
+}
+
+/* 查看更多按钮 */
+.sxhm-more {
+  @apply inline-flex items-center gap-1 text-sm text-[#6B1515] cursor-pointer;
+  font-family: 'Noto Sans SC', sans-serif;
+  transition: gap 0.3s;
+}
+.sxhm-more:hover { gap: 8px; }
+.sxhm-more::after {
+  content: '→';
+  display: inline-block;
+  transition: transform 0.3s;
+}
+.sxhm-more:hover::after {
+  transform: translateX(3px);
+}
